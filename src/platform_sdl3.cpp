@@ -32,21 +32,14 @@ void PlatformSDL3::update()
         {
             this->shutdown();
         }
-
-        // if (SDL_GetWindowFromEvent(&e))
-        // {
-        //     // if (auto *gfx = getService<gfxapi::RenderEngine>())
-        //     // {
-        //     //     gfx.on
-        //     // }
-        // }
     }
 
     ren_->endFrame();
+
+
+    if (shutdown_)
+    {
+        running_ = false;
+        ren_->onShutdown();
+    }
 }
-
-
-// IRenderer *PlatformSDL3::createRenderer(IWindow *win)
-// {
-//     return new gfx::RendererOpenGL(win);
-// }
