@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.5)
 
-project(idk_platform VERSION 0.0.1)
+project(idk_platform CXX)
 find_package(SDL3 REQUIRED)
 find_package(OpenGL REQUIRED)
 
@@ -14,10 +14,11 @@ target_include_directories(
     ${PROJECT_NAME} PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/h"
 )
 target_link_libraries(
-    ${PROJECT_NAME} PUBLIC SDL3::SDL3 libidk idk_core
+    ${PROJECT_NAME} PUBLIC SDL3::SDL3 idk_core idk_gfx
 )
 target_sources(
     ${PROJECT_NAME} PRIVATE
+    "${CMAKE_CURRENT_SOURCE_DIR}/src/platform.cpp"
     "${CMAKE_CURRENT_SOURCE_DIR}/src/platform_sdl3.cpp"
-    "${CMAKE_CURRENT_SOURCE_DIR}/src/window_gl.cpp"
+    "${CMAKE_CURRENT_SOURCE_DIR}/src/window_sdl3.cpp"
 )
