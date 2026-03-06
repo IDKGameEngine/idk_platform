@@ -1,5 +1,5 @@
 #include "idk/platform/window_sdl3.hpp"
-#include "libidk/log.hpp"
+#include "idk/core/log.hpp"
 
 using namespace idk::platform;
 

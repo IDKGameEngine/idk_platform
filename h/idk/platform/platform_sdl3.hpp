@@ -2,6 +2,7 @@
 
 #include "idk/core/platform.hpp"
 #include "idk/platform/window_sdl3.hpp"
+#include <glm/glm.hpp>
 
 
 namespace idk::platform
@@ -26,5 +27,5 @@ public:
     virtual bool running() final { return running_; }
     virtual core::IWindow *getWindow() final { return win_; }
     // virtual core::IRenderer *getRenderer(core::IWindow*) final;
-
 };
+
