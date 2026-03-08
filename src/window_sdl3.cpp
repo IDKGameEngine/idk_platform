@@ -9,8 +9,7 @@ WindowSDL3::WindowSDL3(const core::WindowDesc& desc)
     mWidth(desc.width),
     mHeight(desc.height),
     mSdlWin(nullptr),
-    mGlCtx(nullptr),
-    mShouldClose(false)
+    mGlCtx(nullptr)
 {
     if (false == SDL_Init(SDL_INIT_VIDEO))
         VLOG_FATAL("{}", SDL_GetError());
@@ -60,11 +59,6 @@ int WindowSDL3::getHeight() const
     return mHeight;
 }
 
-bool WindowSDL3::shouldClose() const
-{
-    return mShouldClose;
-}
-
 void *WindowSDL3::getNativeHandle() const
 {
     return mSdlWin;
@@ -77,15 +71,7 @@ void *WindowSDL3::getGpuContext() const
 
 void WindowSDL3::pollEvents()
 {
-    SDL_Event e;
 
-    while (SDL_PollEvent(&e))
-    {
-        if (e.type == SDL_EVENT_QUIT)
-        {
-            mShouldClose = true;
-        }
-    }
 }
 
 

@@ -16,7 +16,6 @@ public:
     ~WindowSDL3();
     virtual int   getWidth() const final;
     virtual int   getHeight() const final;
-    virtual bool  shouldClose() const final;
     virtual void *getNativeHandle() const final;
     virtual void *getGpuContext() const final;
     virtual void  pollEvents() final;
@@ -27,6 +26,5 @@ private:
     const int mHeight;
     SDL_Window *mSdlWin;
     SDL_GLContext mGlCtx;
-    bool mShouldClose;
 };
 

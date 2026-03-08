@@ -19,6 +19,5 @@ target_link_libraries(
 target_sources(
     ${PROJECT_NAME} PRIVATE
     "${CMAKE_CURRENT_SOURCE_DIR}/src/platform.cpp"
-    "${CMAKE_CURRENT_SOURCE_DIR}/src/platform_sdl3.cpp"
     "${CMAKE_CURRENT_SOURCE_DIR}/src/window_sdl3.cpp"
 )
